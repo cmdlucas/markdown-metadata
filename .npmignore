@@ -6,7 +6,6 @@ webpack.config.json
 __tests__
 *.log
 npm-debug.log*
-coverage
 node_modules
 .npm
 .idea
