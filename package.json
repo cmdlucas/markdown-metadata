@@ -1,47 +1,53 @@
 {
-  "author": "Alberto Terragni",
-  "bugs": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser/issues",
-  "dependencies": {
-    "detect-newline": "^3.1.0",
-    "js-yaml": "^3.13.1"
-  },
-  "description": "Parse YAML metadata in a markdown document",
-  "devDependencies": {
-    "jest": "^25.1.0",
-    "prettier": "^1.19.1"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "files": [
-    "lib"
-  ],
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverageFrom": [
-      "lib/*.js"
+    "version": "0.1.0",
+    "license": "MIT",
+    "name": "@cmdlucas/markdown-metadata",
+    "author": "Caleb I. Lucas",
+    "description": "Parse metadata in a markdown document",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cmdlucas/markdown-metadata"
+    },
+    "bugs": "https://github.com/cmdlucas/markdown-metadata/issues",
+    "main": "./bin/markdown-metadata.js",
+    "scripts": {
+        "test": "jest --coverage",
+        "prettier": "prettier --single-quote true --write 'lib/**/*.ts' '__tests__/**/*.ts'",
+        "build": "webpack"
+    },
+    "dependencies": {
+        "detect-newline": "^3.1.0",
+        "js-yaml": "^3.13.1"
+    },
+    "devDependencies": {
+        "@types/js-yaml": "^3.12.4",
+        "awesome-typescript-loader": "^5.2.1",
+        "jest": "^26.0.1",
+        "prettier": "^1.19.1",
+        "webpack": "^4.43.0"
+    },
+    "keywords": [
+        "markdown",
+        "yaml",
+        "toml",
+        "metadata",
+        "parser"
     ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/__tests__/__fixtures__/"
-    ]
-  },
-  "keywords": [
-    "markdown",
-    "yaml",
-    "metadata",
-    "parser"
-  ],
-  "license": "MIT",
-  "main": "./lib/index.js",
-  "name": "markdown-yaml-metadata-parser",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ninjabachelor/markdown-yaml-metadata-parser"
-  },
-  "scripts": {
-    "test": "jest --coverage",
-    "prettier": "prettier --single-quote true --write 'lib/**/*.js' '__tests__/**/*.js'"
-  },
-  "version": "2.1.0"
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "files": [
+        "lib"
+    ],
+    "jest": {
+        "verbose": true,
+        "testEnvironment": "node",
+        "collectCoverageFrom": [
+            "lib/*.ts"
+        ],
+        "testPathIgnorePatterns": [
+            "/node_modules/",
+            "/__tests__/__fixtures__/"
+        ]
+    }
 }

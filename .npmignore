@@ -1,0 +1,13 @@
+lib
+coverage
+.travis.yml
+tsconfig.json
+__tests__
+*.log
+npm-debug.log*
+coverage
+node_modules
+.npm
+.idea
+.DS_Store
+.vscode

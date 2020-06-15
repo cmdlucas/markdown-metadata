@@ -1,19 +1,19 @@
-# Markdown YAML metadata parser
+# Markdown Metadata
 
-[![Build Status](https://travis-ci.org/ninjabachelor/markdown-yaml-metadata-parser.svg?branch=master)](https://travis-ci.org/ninjabachelor/markdown-yaml-metadata-parser)
+[![Build Status](https://travis-ci.org/cmdlucas/markdown-metadata.svg?branch=master)](https://travis-ci.org/cmdlucas/markdown-metadata)
 
-Markdown YAML metadata parser. Parse YAML metadata in a markdown document.
+Markdown metadata extractor. Extract metadata from a markdown document.
 
 ## Installation
 
 Install the latest version with npm or Yarn:
 
 ```bash
-$ npm install markdown-yaml-metadata-parser
+$ npm install @cmdlucas/markdown-metadata
 ```
 
 ```bash
-$ yarn add markdown-yaml-metadata-parser
+$ yarn add @cmdlucas/markdown-metadata
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ In order to be parsed, metadata must be placed at the beginning of the markdown 
 Here's how to parse the metadata:
 
 ```js
-const metadataParser = require('markdown-yaml-metadata-parser');
+const metadataParser = require('@cmdlucas/markdown-metadata');
 
 // Assuming source is a string containing the markdown document
 const source = '--- title: Lorem...';
@@ -53,6 +53,9 @@ result.metadata;
 // Vestibulum tortor quam, *feugiat vitae*, ultricies eget, tempor sit amet, ante.
 result.content;
 ```
+
+## Parse Support
+Currently, only `yaml` is supported. Future versions intend to support `toml` and other popular file configuration formats.
 
 ## License
 
