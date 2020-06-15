@@ -59,4 +59,4 @@ Currently, only `yaml` is supported. Future versions intend to support `toml` an
 
 ## License
 
-Markdown YAML metadata parser is licensed under the MIT License. See the `LICENSE` file for details.
+Markdown Metadata extractor is licensed under the MIT License. See the `LICENSE` file for details.

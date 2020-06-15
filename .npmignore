@@ -2,6 +2,7 @@ lib
 coverage
 .travis.yml
 tsconfig.json
+webpack.config.json
 __tests__
 *.log
 npm-debug.log*

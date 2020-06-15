@@ -7,8 +7,7 @@ module.exports = {
     output: {
         filename: 'markdown-metadata.js',
         path: path.resolve(__dirname, 'bin'),
-        library: 'MarkdownMetadata',
-        libraryTarget: 'var'
+        libraryTarget: 'this'
     },
     resolve: {
         extensions: [".ts", ".js", ".json"]
