@@ -1,11 +1,11 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 module.exports = {
-    entry: "./src/parser.ts",
+    entry: "./src/index.ts",
     mode: 'production',
     target: 'node',
     output: {
-        filename: 'markdown-metadata.js',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'bin'),
         libraryTarget: 'this'
     },

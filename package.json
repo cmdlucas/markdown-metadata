@@ -1,5 +1,5 @@
 {
-    "version": "1.0.2",
+    "version": "1.0.4",
     "license": "MIT",
     "name": "@cmdlucas/markdown-metadata",
     "author": "Caleb I. Lucas",
@@ -9,7 +9,7 @@
         "url": "https://github.com/cmdlucas/markdown-metadata"
     },
     "bugs": "https://github.com/cmdlucas/markdown-metadata/issues",
-    "main": "./bin/markdown-metadata.js",
+    "main": "./bin/index.js",
     "scripts": {
         "test": "jest --coverage",
         "prettier": "prettier --single-quote true --write 'lib/**/*.ts' '__tests__/**/*.ts'",
