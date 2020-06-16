@@ -2,7 +2,7 @@ src
 coverage
 .travis.yml
 tsconfig.json
-webpack.config.json
+webpack.config.js
 __tests__
 *.log
 npm-debug.log*
