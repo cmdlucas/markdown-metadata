@@ -5,7 +5,6 @@ import { safeLoad } from 'js-yaml';
  * Configuration that can be supplied by the user
  */
 export interface MarkdownParserConfig {
-    source: string /** A string containing the markdown */
     windows: boolean /** Specify whether to treat the string as though from a windows platform */
 }
 
@@ -22,6 +21,7 @@ export interface MarkdownData {
  * Internal Operation Configurations
  */
 interface InternalConfig extends MarkdownParserConfig {
+    source: string /** A string containing the markdown */
     isWin(): boolean
 }
 
@@ -139,22 +139,21 @@ const validateInput = (src: string, config: MarkdownParserConfig) => {
  * NB: setting windows to true in configuration prop will override the ability 
  * to infer the type from the document (src)
  *
- * @param {{safeLoad: Function}} yamlParser YAMLParser object with safeLoad function.
  * @param {string} src Document source to parse.
- * @param {{windows: Boolean}} config Operation configuration.
+ * @param {MarkdownParserConfig} config Operation configuration.
  * @returns {MarkdownData}
  * @throws {TypeError} src must be a string.
  * @throws {YAMLException} Error on YAML metadata parsing.
  */
-const parse = (src: string, userConfig: MarkdownParserConfig = config): MarkdownData => {
+export const parse = (src: string, userConfig: MarkdownParserConfig = config): MarkdownData => {
 
     validateInput(src, userConfig)
 
-    userConfig.source = src.trim();
+    config.source = src.trim();
 
-    userConfig.windows = config.windows;
+    config.windows = userConfig.windows;
 
-    const splittedSource = splitSource(userConfig.source);
+    const splittedSource = splitSource(config.source);
 
     const cleanedMetadata = cleanMetadata(splittedSource);
     const parsedYaml = safeLoad(cleanedMetadata);

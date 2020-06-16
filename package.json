@@ -12,7 +12,7 @@
     "main": "./bin/index.js",
     "scripts": {
         "test": "jest --coverage",
-        "prettier": "prettier --single-quote true --write 'lib/**/*.ts' '__tests__/**/*.ts'",
+        "prettier": "prettier --single-quote true --write 'src/**/*.ts' '__tests__/**/*.ts'",
         "build": "webpack"
     },
     "dependencies": {
@@ -20,10 +20,12 @@
         "js-yaml": "^3.13.1"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.0",
         "@types/js-yaml": "^3.12.4",
         "awesome-typescript-loader": "^5.2.1",
         "jest": "^26.0.1",
         "prettier": "^1.19.1",
+        "ts-jest": "^26.1.0",
         "typescript": "^3.9.5",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.11",
@@ -36,18 +38,21 @@
         "metadata",
         "parser"
     ],
-    "engines": {
-        "node": ">=10.0.0"
-    },
-    "files": [
-        "bin"
-    ],
     "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts",
+            "tsx"
+        ],
         "verbose": true,
         "testEnvironment": "node",
         "collectCoverageFrom": [
-            "lib/*.ts"
+            "src/*.ts"
         ],
+        "transform": {
+            "^.+\\.(j|t)s$": "ts-jest"
+        },
         "testPathIgnorePatterns": [
             "/node_modules/",
             "/__tests__/__fixtures__/"
