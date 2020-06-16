@@ -1,4 +1,4 @@
-lib
+src
 coverage
 .travis.yml
 tsconfig.json
